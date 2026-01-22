@@ -26,7 +26,7 @@ app.get('/todos', (req, res) => {
 
 
 // POST Request for writing new Data
-app.post('/post',(req, res) => {
+app.post('/todos',(req, res) => {
   
 	const {id , task , completed} = req.body
  	const newdata = {id , task , completed}
