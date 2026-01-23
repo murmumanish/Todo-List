@@ -1,18 +1,15 @@
-# This is a Basic Todo List 
+# Todo List 
 
-This is a basic Todo List application built using Express.js.
-It provides simple REST APIs to add, update, and delete tasks.
-
-The project is designed to demonstrate how a backend CRUD API works using Node.js and Express.
-
-This Project is based on Commonjs.
+This is a basic Todo List application built with Express.js. 
+It provides simple REST APIs to get, add, update, and delete tasks. 
+The project demonstrates how a backend CRUD API works using Node.js and Express, and it is implemented using CommonJS modules
 
 
 
 # How to use 
 
 ### Git Clone this Repo
-```
+```bash
 git clone https://github.com/gopalkpandit/Todo-List.git
 ```
 
@@ -21,58 +18,113 @@ git clone https://github.com/gopalkpandit/Todo-List.git
 cd Todo-List 
 ```
 ### Start the Server
-```js
+```bash
 node index.js
 ```
+⚠️ **Warning:** Express 5.0 requires Node.js 18 or higher.
 
 ### Web UI
 ```
 http://127.0.0.1:3000/
 ```
 
+# How Data is Stored.
+
+Currently we store our all tasks in `todos.json` file as JSON Array.
+
+```json
+[
+  {
+    "id": 1,
+    "task": "Clean my House",
+    "completed": true
+  },
+  {
+    "id": 2,
+    "task": "Complete my DSA Assignment",
+    "completed": false
+  }
+]
+```
+
+# APIs
+
+# 1. Show all Task
+
+It Lists all the Task Available.
+
+#### Example: 
+```bash
+curl -X GET http://127.0.0.1:3000/todos
+```
+
+#### Response:
+```json
+[
+  {
+    "id": 1,
+    "task": "Clean my House",
+    "completed": true
+  },
+  {
+    "id": 2,
+    "task": "Complete my DSA Assignment",
+    "completed": false
+  }
+]
+```
 
 # 1. Add Task
-#### Curl Command Example: 
-```curl
+
+We can add new Task. Make sure Task ID should be unique.
+#### Example: 
+```bash
 curl -X POST http://127.0.0.1:3000/todos \
 -H 'Content-Type: application/json' \
--d '{"id":12,"task":"Complete my DBMS Homework","completed":false}'
+-d '{"id":3,"task":"Complete my DBMS Homework","completed":false}'
 ```
 
 #### Response:
 ```txt
-New Record is Created with ID 12
+New Record is Created with ID 3
 ```
 
 # 2. Update Task
-
-#### Curl Command Example: 
-```curl
-curl -X PATCH http://127.0.0.1:3000/todos/12 \
+Currently It only update completed as : `true or false`
+#### Example: 
+```bash
+curl -X PATCH http://127.0.0.1:3000/todos/3 \
 -H 'Content-Type: application/json' \
 -d '{"completed":true}'
 ```
 
 #### Response:
 ```txt
-ID 12 is set to true
+ID 3 is set to true
 ```
 
 # 3. Delete Task
-
-#### Curl Command Example: 
-```curl
-curl -X DELETE http://127.0.0.1:3000/todos/12
+To Delete Task we need to pass Task ID in URL.
+#### Example: 
+```bash
+curl -X DELETE http://127.0.0.1:3000/todos/3
 ```
 
 #### Response:
 ```txt
-Deleted ID 17
+Deleted ID 3
 ```
 
 
 # Tech Stack
 
-- ## Node.js
-- ## Express.js
-- ## Currently we have a todos.json for storing Task
+**Client:** HTML, CSS and JS
+
+**Server:** Node, Express
+
+## Authors
+
+- [@Gopal](https://github.com/gopalkpandit)
+- [@Manish](https://github.com/murmumanish)
+
+
