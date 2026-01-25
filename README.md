@@ -74,7 +74,7 @@ curl -X GET http://127.0.0.1:3000/todos
 ]
 ```
 
-# 1. Add Task
+# 2. Add Task
 
 We can add new Task. Make sure Task ID should be unique.
 #### Example: 
@@ -89,7 +89,7 @@ curl -X POST http://127.0.0.1:3000/todos \
 New Record is Created with ID 3
 ```
 
-# 2. Update Task
+# 3. Update Task
 Currently It only update completed as : `true or false`
 #### Example: 
 ```bash
@@ -103,7 +103,7 @@ curl -X PATCH http://127.0.0.1:3000/todos/3 \
 ID 3 is set to true
 ```
 
-# 3. Delete Task
+# 4. Delete Task
 To Delete Task we need to pass Task ID in URL.
 #### Example: 
 ```bash
